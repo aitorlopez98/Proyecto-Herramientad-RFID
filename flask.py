@@ -13,9 +13,12 @@ def herramienta():
         else:
             return 'Devuelve la herramienta en 8 horas'
 
-@app.route('/')
+@app.route('/tiempo')
 def tiempo():
         if lectura == 0:
             for i in range(8, -1, -1):
                 time.sleep(1)
-                return str(i)
+                if i > 0:
+                    return 'El tiempo restante es: ' + str(i) + ' horas'
+                else:
+                    return 'Herramienta robada'
