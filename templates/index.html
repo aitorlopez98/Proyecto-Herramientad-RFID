@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>LOLE APP</title>
+        <link rel="stylesheet" href='../static/style.css'/>
+    </head>
+    <body>
+        <h1>LOLE APP</h1>
+        <h3>No pierdas el material</h3>
+        <fieldset>
+            <legend>¿Herramienta en su sitio?</legend>
+            {% if lectura == 1 %}
+                <p>Herramienta en su sitio</p>
+            {% else %}
+                <p>Devuelve la herramienta en 8 horas</p>
+            {% endif %}
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Tiempo</legend>
+            {% if lectura == 0 %}
+                {% for i in range(8, -1, -1) %}
+                    {{time.sleep(1)}}
+                    {% if i > 0 %}
+                        <p>El tiempo restante es: {{i}}</p>
+                    {% else %}
+                        <p>Herramienta robada</p>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </fieldset>
+    </body>
+</html>

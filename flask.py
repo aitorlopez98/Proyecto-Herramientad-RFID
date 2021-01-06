@@ -1,12 +1,21 @@
-from flask import Flask
+from flask import Flask, render_template
 import time
+import sys
+import importlib.util
+
+#Pruebas
+spec = importlib.util.spec_from_file_location("archivo", "./rfid.MFRC522-python.Read.py")
+archivo = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(archivo)
+
+
 
 #variable para pruebas flask
 lectura = 0
 
 app = Flask('LOLE APP')
 
-@app.route('/')
+"""@app.route('/')
 def herramienta():
         if lectura == 1:
             return 'Herramienta en su sitio'
@@ -21,4 +30,8 @@ def tiempo():
                 if i > 0:
                     return 'El tiempo restante es: ' + str(i) + ' horas'
                 else:
-                    return 'Herramienta robada'
+                    return 'Herramienta robada'"""
+
+@app.route('/')
+def herramienta():
+    return render_template('index.html')

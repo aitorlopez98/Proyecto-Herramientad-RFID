@@ -1,0 +1,14 @@
+body{
+    background-color: blueviolet;
+}
+
+h1, h3{
+    text-align: center;
+    
+}
+
+fieldset, legend{
+    background-color: turquoise;
+    border: black 5px dotter;
+}
+
