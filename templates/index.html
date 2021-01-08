@@ -19,13 +19,14 @@
             <legend>Tiempo</legend>
             {% if lectura == 0 %}
                 {% for i in range(8, -1, -1) %}
-                    {{time.sleep(1)}}
                     {% if i > 0 %}
-                        <p>El tiempo restante es: {{i}}</p>
+                        <p>El tiempo restante es: {{i}} horas</p>
                     {% else %}
                         <p>Herramienta robada</p>
                     {% endif %}
                 {% endfor %}
+            {% else %}
+                <p>No hay herramienta a devolver</p>
             {% endif %}
         </fieldset>
     </body>
